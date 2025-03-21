@@ -1,0 +1,47 @@
+# Build artifacts
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.so
+*.dylib
+*.lock.json
+
+# User-specific files
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet packages
+packages/
+!packages/repositories.config
+project.lock.json
+project.assets.json
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Logs and debugging
+logs/
+*.log
+debug.log
+npm-debug.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Resharper
+_ReSharper.Caches/
+
+# Entity Framework
+Migrations/
+
+# ASP.NET-specific files
+wwwroot/
+appsettings.Development.json

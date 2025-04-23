@@ -75,7 +75,12 @@ cd MyWebAppcking Installed .NET SDK Version
 dotnet run
 ```
 
-## 🎯 Node.js to .NET Command Referenceating a New ASP.NET Web App
+### installing packages like MySql.Data
+`dotnet add package MySql.Data`
+
+
+
+###  🎯 Node.js to .NET Command Referenceating a New ASP.NET Web App
 
 | Node.js Command | .NET Equivalent |
 |----------------|-----------------|web -n MyWebApp

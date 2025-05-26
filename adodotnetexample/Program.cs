@@ -136,6 +136,7 @@ static void ReadStudents(MySqlConnection connection)
         cmd.Parameters.AddWithValue("@id", id);
 
         int rowsAffected = cmd.ExecuteNonQuery();
+        
         Console.WriteLine($"✅ {rowsAffected} student(s) updated.");
         }
         catch (Exception ex)

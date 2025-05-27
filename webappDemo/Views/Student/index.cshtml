@@ -1,22 +1,42 @@
-@*
-This block runs server-side before the page is rendered.
-It sets the "Title" metadata that can be used in the layout or elsewhere in the view.
-ViewData is a dictionary that allows passing data from the view to the layout.
-*@
+@* This directive specifies the model type expected by this view.
+Since _ViewImports.cshtml imports webappDemo.Models, we can use 'Student' directly. *@
+@model List<Student>
 
+  @*
+  This block runs server-side before rendering the page.
+  It sets metadata like the title used in the layout.
+  *@
+  @{
+  ViewData["Title"] = "Student Index";
+  }
 
-@{
-ViewData["Title"] = "Index";
-}
+  @*
+  HTML content below will replace @RenderBody() in the layout file (_Layout.cshtml).
+  This allows consistent look across multiple pages.
+  *@
 
-@*
-The content below is HTML that will be rendered in the browser.
-Since this view uses a layout (via _Layout.cshtml), only the unique content here
-will replace @RenderBody() in the layout when sent to the client.
-*@
+  <h1>This is the Index file in student thingy</h1>
 
+  <a class="btn btn-primary" href="#">Primary Button</a>
+  <button class="btn btn-success">Success Button</button>
 
-<h1>This is the Index file in student thingy</h1>
-
-<a class="btn btn-primary" href="#">Primary Button</a>
-<button class="btn btn-success">Success Button</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      @* Loop through the Model (which is a List<Student>) *@
+        @foreach (var student in Model)
+        {
+        <tr>
+          <td>@student.Name</td>
+          <td>@student.Age</td>
+          <td>@student.Gender</td>
+        </tr>
+        }
+    </tbody>
+  </table>

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc; // Required for creating controllers and returning views
 
-namespace TestWebApp.Controllers
+namespace webappDemo.Controllers
 {
     // HomeController is a class that handles requests to the home section of the website.
     // It inherits from the built-in Controller class which provides useful methods like View().

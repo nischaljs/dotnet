@@ -1,15 +1,41 @@
+@*
+This is the main layout page used across Razor views.
+It defines a common structure shared by multiple pages in the application.
+Views will inject their content into @RenderBody().
+*@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  @*
+  Linking Bootstrap CSS from the local wwwroot folder.
+  The ~ operator refers to the root of the web application.
+  *@
   <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="~/twitter-bootstrap/js/bootstrap.bundle.min.js"> </script>
-  <title> @ViewBag.Title</title>
+
+  @*
+  Including Bootstrap JS bundle (includes all plugins and dependencies).
+  Placed in the head here, but often moved to the end of body in production.
+  *@
+  <script src="~/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  @*
+  Dynamic title tag using ViewBag.Title from individual views.
+  Each view can set its own title which appears in the browser tab.
+  *@
+  <title>@ViewBag.Title</title>
 </head>
 
 <body>
+  @*
+  Main container where the content from individual views will be injected.
+  @RenderBody() acts as a placeholder for the specific view content.
+  *@
   <div>
     @RenderBody()
   </div>

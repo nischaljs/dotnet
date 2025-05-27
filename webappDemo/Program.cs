@@ -1,12 +1,18 @@
+// Create a new web application builder to set up the app
 var builder = WebApplication.CreateBuilder(args);
-//for every view we need the controller after this, the controller will respond
+
+// Add support for controllers and views to enable MVC functionality
 builder.Services.AddControllersWithViews();
 
+// Build the application using the configured services
 var app = builder.Build();
-// this is used to serve the static things inside the wwwroot folder similar to public in js 
+
+// Enable serving of static files (like CSS, JS, images) from the wwwroot folder
 app.UseStaticFiles();
-//this means the controllers folder is in the root place in the same heirarchy
+
+// Set up default routing convention for controllers:
+// This maps routes like /Home/Index to Controllers/HomeController.cs
 app.MapDefaultControllerRoute();
 
-
+// Start the application and begin listening for HTTP requests
 app.Run();
